@@ -10,41 +10,70 @@ import {makeStyles} from '@mui/styles'
 
 
 export default function LeaderCard(props:any) {
-  
+  const font = "Lato";
 
   const classes = useStyles();
   return (
-    
-    <Card style = {{backgroundColor:"black"}}sx={{ maxWidth: 345 }} className = {classes.root}>
+    <>
+    <Card  style = {{backgroundColor:"none"}}sx={{ borderRadius:'20px', maxWidth: 565, minWidth:350 }} className = {classes.root}>
       <CardActionArea href = "https://twitter.com/" className = {classes.root}>
         <CardMedia
           component="img"
-          height="220"
+          height="300"
           image="/images/example.png"
           className = {classes.root}
           alt=""
           
         />
-        <CardContent>
-          <Typography>
-            <Link href = "#">{props.handle}</Link>
-          </Typography>
-        </CardContent>
+        
       </CardActionArea>
-      <CardActions sx = {{mx:15}}>
-        <Button size="large" color="primary" variant ="outlined" href = "https://twitter.com/compose/tweet?text=@ProjectEluune Claiming my Hot Take.">
-          Claim
-        </Button>
-      </CardActions>
+ 
     </Card>
-    
+      {props.isActive && 
+      
+        <Button  sx ={
+          { hover: {
+          "&:hover": {
+            backgroundColor: 'whitesmoke'
+          }
+          }, 
+          marginTop:'20px',
+          width:'120px',
+          height:'50px',
+          color: 'black', 
+          fontFamily:font,
+          font:'caption',
+          backgroundColor:'#E6B2B8',
+          borderRadius:'40px'
+          
+          }} size="large" className = {classes.button} variant ="contained" href = "https://twitter.com/compose/tweet?text=@ProjectEluune Claiming my Hot Take.">
+                Claim
+              </Button>
+        
+        }  
+        {!props.isActive && 
+        
+        <Button disabled sx ={{ hover: {
+          "&:hover": {
+            backgroundColor: 'whitesmoke'
+          }
+        }, color: 'whitesmoke', backgroundColor:'#E6B2B8'}} size="large" className = {classes.button} variant ="contained" href = "https://twitter.com/compose/tweet?text=@ProjectEluune Claiming my Hot Take.">
+                Claimed
+              </Button>
+        
+        }
+        </>
   );
 }
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: 'blue',
-    color:'ButtonShadow'
+    backgroundColor: 'pink',
+    
     
   },
+  button:{
+    backgroundColor:'#E6B2B8',
+    color:'#E6B2B8'
+  }
 });

@@ -11,11 +11,12 @@ import {makeStyles} from '@mui/styles'
 
 export default function HotTakes(props:any) {
   const classes = useStyles();
+  const font = 'Lato';
   return (
-    <Container className = {classes.root}>
-        <Typography className = {classes.title1} align = "center" variant = "h2" color = "CaptionText">Project Eluune</Typography>
-        <Typography  className = {classes.title2} variant = "h4" color = "CaptionText">Decoders Leaderboard</Typography>
-        <Button   variant ="contained" color = "secondary">CLAIM</Button>
+    <Container className = {classes.root} style = {{fontFamily:font}}>
+        <Typography gutterBottom =  {true} className = {classes.title1} align = "center" variant = "h2" color = "white">Project Eluune</Typography>
+        <Typography className = {classes.title2} variant = "h4" color = "white">Decoders Leaderboard</Typography>
+        <Button color = "secondary" className = {classes.button} variant ="outlined">CLAIM</Button>
     </Container>
   );
 }
@@ -23,18 +24,31 @@ export default function HotTakes(props:any) {
 const useStyles = makeStyles({
   root: {
     paddingTop:'150px',
-    backgroundColor: 'none',
-    color:'ButtonShadow',
+    
+    
     height:'100vh',
+    fontFamily:'fantasy'
+    
     
     
   },
   title1:{
-    padding:'10px'
+    padding:'20px',
+    color:'whitesmoke',
+    fontFamily:'Lato',
+    
+
   },
   title2:{
     padding:'10px'
   },
+  button:{
+
+    backgroundColor:'#E6B2B8',
+
+
+
+  }
  
 });
 

@@ -16,11 +16,12 @@ export default function LeaderBoardGrid() {
   return (
     <Grid sx={{ flexGrow: 1 }} container spacing={2}>
       <Grid item xs={12}>
-        <Grid container justifyContent="center" spacing={12}>
+        <Grid container justifyContent="center" spacing={14}>
           {[0, 1, 2,3,4,5].map((value) => (
             <Grid key={value} item>
               <LeaderCard
                 handle = {'@0xBelkan'}
+                isActive = {true}
                 
               />
             </Grid>
